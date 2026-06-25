@@ -77,9 +77,11 @@ Microsoft Azure
 Retrieve failed Windows logon attempts:
 
 ```kql
-SecurityEvent
+Event
+| where EventLog == "Security"
 | where EventID == 4625
-| project TimeGenerated, Computer, Account, IPAddress
+| summarize Attempts = count() by bin(TimeGenerated, 5m)
+| render timechart
 ```
 
 Retrieve successful logons:
@@ -96,6 +98,9 @@ Retrieve newly created user accounts:
 SecurityEvent
 | where EventID == 4720
 ```
+
+<img width="1305" height="769" alt="soc-lab-1" src="https://github.com/user-attachments/assets/0fb92fb2-917f-4c8e-aba6-fbd91ab34ad3" />
+
 
 ---
 
