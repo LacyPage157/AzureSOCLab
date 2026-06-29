@@ -146,6 +146,3 @@ Building this environment provided practical experience with Microsoft's securit
 
 ---
 
-## Disclaimer
-
-This homelab was created for educational purposes to gain hands-on experience with Microsoft Azure, Active Directory, Microsoft Entra ID, and Microsoft Sentinel. It is intended to demonstrate foundational Security Operations Center (SOC) concepts and cloud security practices.
